@@ -1,4 +1,9 @@
-import {isitDate, isitNaN, isitNumber, isitString} from './type';
+import {
+  isitDate,
+  isitNaN,
+  isitNumber,
+  isitString,
+} from './type';
 
 /**
  * String values for the days of the week
@@ -20,7 +25,7 @@ const MONTH_STRINGS = [
   'september',
   'october',
   'november',
-  'december'
+  'december',
 ];
 
 /**
@@ -31,9 +36,8 @@ const MONTH_STRINGS = [
  * @param {string} dayString
  * @returns {boolean}
  */
-export const isitDay = (object, dayString = DAY_STRINGS[new Date().getDay()]) => {
-  return isitDate(object) && isitString(dayString) && dayString.toLowerCase() === DAY_STRINGS[object.getDay()];
-};
+export const isitDay = (object, dayString = DAY_STRINGS[new Date().getDay()]) =>
+  isitDate(object) && isitString(dayString) && dayString.toLowerCase() === DAY_STRINGS[object.getDay()];
 
 /**
  * Checks to see if the date object is in daylight savings time of year
@@ -65,9 +69,7 @@ export const isitDaylightSavingsTime = isitDayLightSavingTime;
  * @param {any} object
  * @returns {boolean}
  */
-export const isitFuture = (object) => {
-  return isitDate(object) && object.valueOf() > Date.now();
-};
+export const isitFuture = (object) => isitDate(object) && object.valueOf() > Date.now();
 
 /**
  * Checks to see if the date object is at least the minimumDate,
@@ -196,9 +198,8 @@ export const isitInNextYear = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitLeapYear = (object) => {
-  return isitNumber(object) && ((object % 4 === 0 && object % 100 !== 0) || object % 400 === 0);
-};
+export const isitLeapYear = (object) =>
+  isitNumber(object) && ((object % 4 === 0 && object % 100 !== 0) || object % 400 === 0);
 
 /**
  * Checks to see if date object is the same month of the year
@@ -208,9 +209,8 @@ export const isitLeapYear = (object) => {
  * @param {string} monthString
  * @returns {boolean}
  */
-export const isitMonth = (object, monthString = MONTH_STRINGS[new Date().getMonth()]) => {
-  return isitDate(object) && isitString(monthString) && monthString.toLowerCase() === MONTH_STRINGS[object.getMonth()];
-};
+export const isitMonth = (object, monthString = MONTH_STRINGS[new Date().getMonth()]) =>
+  isitDate(object) && isitString(monthString) && monthString.toLowerCase() === MONTH_STRINGS[object.getMonth()];
 
 /**
  * Checks to see if date object is in the past relative to now
@@ -218,9 +218,7 @@ export const isitMonth = (object, monthString = MONTH_STRINGS[new Date().getMont
  * @param {any} object
  * @returns {boolean}
  */
-export const isitPast = (object) => {
-  return isitDate(object) && object.valueOf() < Date.now();
-};
+export const isitPast = (object) => isitDate(object) && object.valueOf() < Date.now();
 
 /**
  * Checks to see if date object is in the same quarter as
@@ -374,10 +372,10 @@ export default {
   month: isitMonth,
   past: isitPast,
   quarterOfYear: isitQuarterOfYear,
-  tomorrow: isitTomorrow,
   today: isitToday,
+  tomorrow: isitTomorrow,
   weekday: isitWeekday,
   weekend: isitWeekend,
   year: isitYear,
-  yesterday: isitYesterday
+  yesterday: isitYesterday,
 };

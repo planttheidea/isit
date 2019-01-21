@@ -1,32 +1,11 @@
-const webpack = require('webpack');
 const defaultConfig = require('./webpack.config');
 
 module.exports = Object.assign({}, defaultConfig, {
-  cache: false,
-
   devtool: undefined,
 
-  output: Object.assign({}, defaultConfig.output, {
-    filename: 'isit.min.js'
-  }),
+  mode: 'production',
 
-  plugins: defaultConfig.plugins.concat([
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        booleans: true,
-        conditionals: true,
-        dead_code: true,
-        drop_console: true,
-        drop_debugger: true,
-        join_vars: true,
-        screw_ie8: true,
-        unused: true,
-        warnings: false
-      },
-      mangle: {
-        screw_ie8: true
-      },
-      sourceMap: false
-    })
-  ])
+  output: Object.assign({}, defaultConfig.output, {
+    filename: 'isit.min.js',
+  }),
 });

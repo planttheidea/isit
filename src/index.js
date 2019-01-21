@@ -15,12 +15,10 @@ import type, {isitArray} from './type';
 const noAllOrAnyFunctions = [
   ...arithmeticFunctions,
   ...arrayFunctions,
-  ...Object.keys(environment).map((key) => {
-    return key;
-  }),
+  ...Object.keys(environment).map((key) => key),
   ...objectFunctions,
   ...stringFunctions,
-  ...timeFunctions
+  ...timeFunctions,
 ];
 
 /**
@@ -44,18 +42,16 @@ const getAnyAllObjectParameters = (parameters) => {
  * @param {Function} func
  * @returns {Function}
  */
-const isitAll = (func) => {
-  return (...objects) => {
-    objects = getAnyAllObjectParameters(objects);
+const isitAll = (func) => (...objects) => {
+  objects = getAnyAllObjectParameters(objects);
 
-    for (let index = 0, length = objects.length; index < length; index++) {
-      if (!func(objects[index])) {
-        return false;
-      }
+  for (let index = 0, length = objects.length; index < length; index++) {
+    if (!func(objects[index])) {
+      return false;
     }
+  }
 
-    return true;
-  };
+  return true;
 };
 
 /**
@@ -64,18 +60,16 @@ const isitAll = (func) => {
  * @param {Function} func
  * @returns {Function}
  */
-const isitAny = (func) => {
-  return (...objects) => {
-    objects = getAnyAllObjectParameters(objects);
+const isitAny = (func) => (...objects) => {
+  objects = getAnyAllObjectParameters(objects);
 
-    for (let index = 0, length = objects.length; index < length; index++) {
-      if (func(objects[index])) {
-        return true;
-      }
+  for (let index = 0, length = objects.length; index < length; index++) {
+    if (func(objects[index])) {
+      return true;
     }
+  }
 
-    return false;
-  };
+  return false;
 };
 
 /**
@@ -84,11 +78,7 @@ const isitAny = (func) => {
  * @param {Function} func
  * @returns {Function}
  */
-const isitNot = (func) => {
-  return (...objects) => {
-    return !func(...objects);
-  };
-};
+const isitNot = (func) => (...objects) => !func(...objects);
 
 let isit = {
       ...type,
@@ -99,7 +89,7 @@ let isit = {
       ...object,
       ...array,
       ...environment,
-      ...time
+      ...time,
     },
     all = {},
     any = {},
@@ -128,8 +118,6 @@ isit.not = not;
  *
  * @returns {object}
  */
-isit.setNamespace = () => {
-  return this;
-};
+isit.setNamespace = () => this;
 
 export default isit;

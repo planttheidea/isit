@@ -1,4 +1,12 @@
-import {isitArguments, isitArray, isitNaN, isitNull, isitObject, isitRegExp, isitUndefined} from './type';
+import {
+  isitArguments,
+  isitArray,
+  isitNaN,
+  isitNull,
+  isitObject,
+  isitRegExp,
+  isitUndefined,
+} from './type';
 
 const WHITESPACE_REGEXP = /^\s\s*/;
 
@@ -8,9 +16,7 @@ const WHITESPACE_REGEXP = /^\s\s*/;
  * @param {any} object
  * @returns {boolean}
  */
-export const isitWhitespace = (object) => {
-  return WHITESPACE_REGEXP.test(object);
-};
+export const isitWhitespace = (object) => WHITESPACE_REGEXP.test(object);
 
 /**
  * Checks to see if the object is empty from a deep value perspective
@@ -54,9 +60,7 @@ export const isitEmpty = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitExisty = (object) => {
-  return object !== undefined && object !== null;
-};
+export const isitExisty = (object) => object !== undefined && object !== null;
 
 /**
  * Checks to see if object is falsy based on classic JavaScript rules
@@ -68,9 +72,7 @@ export const isitExisty = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitFalsy = (object) => {
-  return !object;
-};
+export const isitFalsy = (object) => !object;
 
 /**
  * Checks to see if object is equal to a single empty space
@@ -79,9 +81,7 @@ export const isitFalsy = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitSpace = (object) => {
-  return object === ' ';
-};
+export const isitSpace = (object) => object === ' ';
 
 /**
  * Checks to see if object is truthy based on classic JavaScript rules
@@ -94,9 +94,8 @@ export const isitSpace = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitTruthy = (object) => {
-  return isitExisty(object) && object !== false && !isitNaN(object) && object !== '' && object !== 0;
-};
+export const isitTruthy = (object) =>
+  isitExisty(object) && object !== false && !isitNaN(object) && object !== '' && object !== 0;
 
 export default {
   empty: isitEmpty,
@@ -104,5 +103,5 @@ export default {
   falsy: isitFalsy,
   space: isitSpace,
   truthy: isitTruthy,
-  whitespace: isitWhitespace
+  whitespace: isitWhitespace,
 };

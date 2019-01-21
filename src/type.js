@@ -4,9 +4,7 @@
  * @param {any} object
  * @returns {string}
  */
-const toString = (object) => {
-  return Object.prototype.toString.call(object);
-};
+const toString = (object) => Object.prototype.toString.call(object);
 
 /**
  * Get the full toString value string based on type
@@ -14,9 +12,7 @@ const toString = (object) => {
  * @param {string} type
  * @returns {string}
  */
-const getObjectToStringValue = (type) => {
-  return `[object ${type}]`;
-};
+const getObjectToStringValue = (type) => `[object ${type}]`;
 
 /**
  * Checks to see if object is null
@@ -24,9 +20,7 @@ const getObjectToStringValue = (type) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitNull = (object) => {
-  return object === null;
-};
+export const isitNull = (object) => object === null;
 
 /**
  * Checks to see if object is an arguments object
@@ -34,12 +28,9 @@ export const isitNull = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitArguments = (object) => {
-  return (
-    (!isitNull(object) && toString(object) === getObjectToStringValue('Arguments')) ||
-    !!(object && typeof object === 'object' && 'callee' in object)
-  );
-};
+export const isitArguments = (object) =>
+  (!isitNull(object) && toString(object) === getObjectToStringValue('Arguments'))
+  || !!(object && typeof object === 'object' && 'callee' in object);
 
 /**
  * Checks to see if object is an array
@@ -47,9 +38,7 @@ export const isitArguments = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitArray = (object) => {
-  return toString(object) === getObjectToStringValue('Array');
-};
+export const isitArray = (object) => toString(object) === getObjectToStringValue('Array');
 
 /**
  * Checks to see if object is a boolean
@@ -57,9 +46,8 @@ export const isitArray = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitBoolean = (object) => {
-  return object === true || object === false || toString(object) === getObjectToStringValue('Boolean');
-};
+export const isitBoolean = (object) =>
+  object === true || object === false || toString(object) === getObjectToStringValue('Boolean');
 
 /**
  * Checks to see if object is a string
@@ -67,9 +55,7 @@ export const isitBoolean = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitString = (object) => {
-  return toString(object) === getObjectToStringValue('String');
-};
+export const isitString = (object) => toString(object) === getObjectToStringValue('String');
 
 /**
  * Checks to see if object is a character (string with length of 1)
@@ -77,9 +63,7 @@ export const isitString = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitChar = (object) => {
-  return isitString(object) && object.length === 1;
-};
+export const isitChar = (object) => isitString(object) && object.length === 1;
 
 /**
  * Checks to see if object is a date
@@ -87,9 +71,7 @@ export const isitChar = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitDate = (object) => {
-  return toString(object) === getObjectToStringValue('Date');
-};
+export const isitDate = (object) => toString(object) === getObjectToStringValue('Date');
 
 /**
  * Checks to see if object is an error
@@ -97,9 +79,7 @@ export const isitDate = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitError = (object) => {
-  return toString(object) === getObjectToStringValue('Error');
-};
+export const isitError = (object) => toString(object) === getObjectToStringValue('Error');
 
 /**
  * Checks to see if object is a function
@@ -107,9 +87,8 @@ export const isitError = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitFunction = (object) => {
-  return toString(object) === getObjectToStringValue('Function') || typeof object === 'function';
-};
+export const isitFunction = (object) =>
+  toString(object) === getObjectToStringValue('Function') || typeof object === 'function';
 
 /**
  * Checks to see if object is a JSON string
@@ -133,9 +112,7 @@ export const isitJSON = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitNaN = (object) => {
-  return object !== object;
-};
+export const isitNaN = (object) => object !== object;
 
 /**
  * Checks to see if object is a number
@@ -143,9 +120,7 @@ export const isitNaN = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitNumber = (object) => {
-  return !isitNaN(object) && toString(object) === getObjectToStringValue('Number');
-};
+export const isitNumber = (object) => !isitNaN(object) && toString(object) === getObjectToStringValue('Number');
 
 /**
  * Checks to see if object is an object
@@ -153,9 +128,7 @@ export const isitNumber = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitObject = (object) => {
-  return toString(object) === getObjectToStringValue('Object') && !!object;
-};
+export const isitObject = (object) => toString(object) === getObjectToStringValue('Object') && !!object;
 
 /**
  * Checks to see if object is a regex
@@ -163,9 +136,7 @@ export const isitObject = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitRegExp = (object) => {
-  return toString(object) === getObjectToStringValue('RegExp');
-};
+export const isitRegExp = (object) => toString(object) === getObjectToStringValue('RegExp');
 
 /**
  * Checks to see if objects are the same type
@@ -188,9 +159,7 @@ export const isitSameType = (object1, object2) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitSymbol = (object) => {
-  return typeof object === 'symbol';
-};
+export const isitSymbol = (object) => typeof object === 'symbol';
 
 /**
  * Checks to see if object is a TypedArray
@@ -202,15 +171,15 @@ export const isitTypedArray = (object) => {
   const objectToString = toString(object);
 
   return (
-    objectToString === getObjectToStringValue('Int8Array') ||
-    objectToString === getObjectToStringValue('Uint8Array') ||
-    objectToString === getObjectToStringValue('Uint8ClampedArray') ||
-    objectToString === getObjectToStringValue('Int16Array') ||
-    objectToString === getObjectToStringValue('Uint16Array') ||
-    objectToString === getObjectToStringValue('Int32Array') ||
-    objectToString === getObjectToStringValue('Uint32Array') ||
-    objectToString === getObjectToStringValue('Float32Array') ||
-    objectToString === getObjectToStringValue('Float64Array')
+    objectToString === getObjectToStringValue('Int8Array')
+    || objectToString === getObjectToStringValue('Uint8Array')
+    || objectToString === getObjectToStringValue('Uint8ClampedArray')
+    || objectToString === getObjectToStringValue('Int16Array')
+    || objectToString === getObjectToStringValue('Uint16Array')
+    || objectToString === getObjectToStringValue('Int32Array')
+    || objectToString === getObjectToStringValue('Uint32Array')
+    || objectToString === getObjectToStringValue('Float32Array')
+    || objectToString === getObjectToStringValue('Float64Array')
   );
 };
 
@@ -220,9 +189,7 @@ export const isitTypedArray = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitUndefined = (object) => {
-  return object === void 0;
-};
+export const isitUndefined = (object) => object === void 0;
 
 export default {
   arguments: isitArguments,
@@ -242,5 +209,5 @@ export default {
   string: isitString,
   symbol: isitSymbol,
   typedArray: isitTypedArray,
-  undefined: isitUndefined
+  undefined: isitUndefined,
 };

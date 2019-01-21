@@ -1,5 +1,8 @@
 import {isitEqual} from './arithmetic';
-import {isitArray, isitString} from './type';
+import {
+  isitArray,
+  isitString,
+} from './type';
 
 const DATA_URL_REGEXP = /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i; // eslint-disable-line
 const DOUBLE_BYTE_REGEXP = /[^\u0000-\u00ff]/;
@@ -59,7 +62,7 @@ const COMPLEX_WORD = RegExp(
     `${RS_UPPER}?${RS_LOWER_MISC}+`,
     `${RS_UPPER}+`,
     RS_DIGITS,
-    RS_EMOJI
+    RS_EMOJI,
   ].join('|'),
   'g'
 );
@@ -161,9 +164,7 @@ const toStartCase = (string) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitCamelCase = (object) => {
-  return isitString(object) && object === toCamelCase(object);
-};
+export const isitCamelCase = (object) => isitString(object) && object === toCamelCase(object);
 
 /**
  * Checks to see if the string object is capitalized, meaning
@@ -178,9 +179,7 @@ export const isitCapitalized = (object) => {
   }
 
   const words = object.split(' ');
-  const capitalized = words.map((word) => {
-    return word.charAt(0).toUpperCase() + word.slice(1);
-  });
+  const capitalized = words.map((word) => word.charAt(0).toUpperCase() + word.slice(1));
 
   return isitEqual(words, capitalized);
 };
@@ -191,9 +190,7 @@ export const isitCapitalized = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitDataUrl = (object) => {
-  return DATA_URL_REGEXP.test(object);
-};
+export const isitDataUrl = (object) => DATA_URL_REGEXP.test(object);
 
 /**
  * Checks to see if object is a double byte integer
@@ -201,9 +198,7 @@ export const isitDataUrl = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitDoubleByte = (object) => {
-  return DOUBLE_BYTE_REGEXP.test(object);
-};
+export const isitDoubleByte = (object) => DOUBLE_BYTE_REGEXP.test(object);
 
 /**
  * Checks if string object ends with the string value endingString
@@ -233,9 +228,7 @@ export const isitEndsWith = isitEndWith;
  * @param {any} object
  * @returns {boolean}
  */
-export const isitHtml = (object) => {
-  return HTML_REGEXP.test(object);
-};
+export const isitHtml = (object) => HTML_REGEXP.test(object);
 
 /**
  * Checks if string object has the string value substring contained
@@ -245,9 +238,8 @@ export const isitHtml = (object) => {
  * @param {string} substring
  * @returns {boolean}
  */
-export const isitInclude = (object, substring) => {
-  return (isitArray(object) || isitString(object)) && isitString(substring) && object.indexOf(substring) !== -1;
-};
+export const isitInclude = (object, substring) =>
+  (isitArray(object) || isitString(object)) && isitString(substring) && object.indexOf(substring) !== -1;
 
 /**
  * Alias function for include
@@ -260,9 +252,7 @@ export const isitIncludes = isitInclude;
  * @param {string} object
  * @returns {boolean}
  */
-export const isitKebabCase = (object) => {
-  return isitString(object) && object.toLowerCase() === toKebabCase(object);
-};
+export const isitKebabCase = (object) => isitString(object) && object.toLowerCase() === toKebabCase(object);
 
 /**
  * Checks to see if string object is all lowercase
@@ -270,9 +260,7 @@ export const isitKebabCase = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitLowerCase = (object) => {
-  return isitString(object) && object === object.toLowerCase();
-};
+export const isitLowerCase = (object) => isitString(object) && object === object.toLowerCase();
 
 /**
  * Checks to see if string object is spelled identically
@@ -304,9 +292,7 @@ export const isitPalindrome = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitSnakeCase = (object) => {
-  return isitString(object) && object.toLowerCase() === toSnakeCase(object);
-};
+export const isitSnakeCase = (object) => isitString(object) && object.toLowerCase() === toSnakeCase(object);
 
 /**
  * Checks to see if string object is spelled in proper
@@ -316,9 +302,7 @@ export const isitSnakeCase = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitStartCase = (object) => {
-  return isitString(object) && object === toStartCase(object);
-};
+export const isitStartCase = (object) => isitString(object) && object === toStartCase(object);
 
 /**
  * Checks to see if string object starts with string value
@@ -328,9 +312,8 @@ export const isitStartCase = (object) => {
  * @param {string} substring
  * @returns {boolean}
  */
-export const isitStartWith = (object, substring) => {
-  return isitString(object) && isitString(substring) && object.indexOf(substring) === 0;
-};
+export const isitStartWith = (object, substring) =>
+  isitString(object) && isitString(substring) && object.indexOf(substring) === 0;
 
 /**
  * Alias function for startWith
@@ -343,9 +326,7 @@ export const isitStartsWith = isitStartWith;
  * @param {any} object
  * @returns {boolean}
  */
-export const isitUpperCase = (object) => {
-  return isitString(object) && object === object.toUpperCase();
-};
+export const isitUpperCase = (object) => isitString(object) && object === object.toUpperCase();
 
 /**
  * Functions we don't want to show in any or all
@@ -369,5 +350,5 @@ export default {
   startCase: isitStartCase,
   startWith: isitStartWith,
   startsWith: isitStartsWith,
-  upperCase: isitUpperCase
+  upperCase: isitUpperCase,
 };

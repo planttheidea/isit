@@ -8,7 +8,7 @@ import {
   isitRegExp,
   isitSameType,
   isitString,
-  isitUndefined
+  isitUndefined,
 } from './type';
 
 const EPSILON = Number.EPSILON || 2.220446049250313e-16;
@@ -50,9 +50,7 @@ export const isitBelow = (object, maximumValue) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitDecimal = (object) => {
-  return isitNumber(object) && object % 1 !== 0;
-};
+export const isitDecimal = (object) => isitNumber(object) && object % 1 !== 0;
 
 /**
  * Checks to see if objects are of the same type and equal in value,
@@ -131,9 +129,7 @@ export const isitEqual = (object1, object2) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitEven = (object) => {
-  return isitNumber(object) && object % 2 === 0;
-};
+export const isitEven = (object) => isitNumber(object) && object % 2 === 0;
 
 /**
  * Checks to see if object is not either positive or negative Infinity
@@ -141,9 +137,8 @@ export const isitEven = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitFinite = (object) => {
-  return object !== Number.POSITIVE_INFINITY && object !== Number.NEGATIVE_INFINITY && !isitNaN(object);
-};
+export const isitFinite = (object) =>
+  object !== Number.POSITIVE_INFINITY && object !== Number.NEGATIVE_INFINITY && !isitNaN(object);
 
 /**
  * Checks to see if object is either positive or negative Infinity
@@ -151,9 +146,7 @@ export const isitFinite = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitInfinite = (object) => {
-  return !isitFinite(object);
-};
+export const isitInfinite = (object) => !isitFinite(object);
 
 /**
  * Checks to see if object is an integer
@@ -161,9 +154,7 @@ export const isitInfinite = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitInteger = (object) => {
-  return isitNumber(object) && object % 1 === 0;
-};
+export const isitInteger = (object) => isitNumber(object) && object % 1 === 0;
 
 /**
  * Checks to see if object is a negative number
@@ -171,9 +162,7 @@ export const isitInteger = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitNegative = (object) => {
-  return isitNumber(object) && object < 0;
-};
+export const isitNegative = (object) => isitNumber(object) && object < 0;
 
 /**
  * Checks to see if object is an odd integer
@@ -181,9 +170,7 @@ export const isitNegative = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitOdd = (object) => {
-  return isitNumber(object) && object % 2 === 1;
-};
+export const isitOdd = (object) => isitNumber(object) && object % 2 === 1;
 
 /**
  * Alias for isitAbove
@@ -198,9 +185,7 @@ export const isitOver = isitAbove;
  * @param {any} object
  * @returns {boolean}
  */
-export const isitPositive = (object) => {
-  return isitNumber(object) && object > 0;
-};
+export const isitPositive = (object) => isitNumber(object) && object > 0;
 
 /**
  * Alias for isitBelow
@@ -218,9 +203,8 @@ export const isitUnder = isitBelow;
  * @param {number} maximum
  * @returns {boolean}
  */
-export const isitWithin = (object, minimum, maximum) => {
-  return isitNumber(object) && isitNumber(minimum) && isitNumber(maximum) && object >= minimum && object <= maximum;
-};
+export const isitWithin = (object, minimum, maximum) =>
+  isitNumber(object) && isitNumber(minimum) && isitNumber(maximum) && object >= minimum && object <= maximum;
 
 /**
  * Functions we don't want to appear in any or all
@@ -233,13 +217,13 @@ export default {
   decimal: isitDecimal,
   equal: isitEqual,
   even: isitEven,
+  finite: isitFinite,
   infinite: isitInfinite,
   integer: isitInteger,
-  finite: isitFinite,
   negative: isitNegative,
   odd: isitOdd,
   over: isitOver,
   positive: isitPositive,
   under: isitUnder,
-  within: isitWithin
+  within: isitWithin,
 };

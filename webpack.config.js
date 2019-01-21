@@ -2,11 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  cache: true,
-
-  devtool: '#cheap-module-eval-source-map',
+  devtool: '#source-map',
 
   entry: [path.resolve(__dirname, 'src', 'index.js')],
+
+  mode: 'development',
 
   module: {
     rules: [
@@ -19,16 +19,16 @@ module.exports = {
           emitError: true,
           failOnError: true,
           failOnWarning: false,
-          formatter: require('eslint-friendly-formatter')
+          formatter: require('eslint-friendly-formatter'),
         },
-        test: /\.js$/
+        test: /\.js$/,
       },
       {
         include: [path.resolve(__dirname, 'src')],
         loader: 'babel-loader',
-        test: /\.js?$/
-      }
-    ]
+        test: /\.js?$/,
+      },
+    ],
   },
 
   output: {
@@ -36,8 +36,8 @@ module.exports = {
     library: 'isit',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, 'dist'),
-    umdNamedDefine: true
+    umdNamedDefine: true,
   },
 
-  plugins: [new webpack.EnvironmentPlugin(['NODE_ENV'])]
+  plugins: [new webpack.EnvironmentPlugin(['NODE_ENV'])],
 };

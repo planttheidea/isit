@@ -1,4 +1,10 @@
-import {isitFunction, isitNull, isitNumber, isitObject, isitUndefined} from './type';
+import {
+  isitFunction,
+  isitNull,
+  isitNumber,
+  isitObject,
+  isitUndefined,
+} from './type';
 
 const toString = Object.prototype.toString;
 
@@ -10,9 +16,7 @@ const NODE_LIST_REGEXP = /^\[object (HTMLCollection|NodeList)\]$/;
  * @param {any} object
  * @returns {boolean}
  */
-export const isitDomNode = (object) => {
-  return !isitUndefined(object) && !isitNull(object) && object.nodeType > 0;
-};
+export const isitDomNode = (object) => !isitUndefined(object) && !isitNull(object) && object.nodeType > 0;
 
 /**
  * Checks if object is an HTMLCollection, for example
@@ -21,9 +25,8 @@ export const isitDomNode = (object) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitDomNodeList = (object) => {
-  return !isitUndefined(object) && !isitNull(object) && NODE_LIST_REGEXP.test(toString.call(object));
-};
+export const isitDomNodeList = (object) =>
+  !isitUndefined(object) && !isitNull(object) && NODE_LIST_REGEXP.test(toString.call(object));
 
 /**
  * Checks if object is a jQuery object
@@ -65,9 +68,7 @@ export const isitPropertyCount = (object, count) => {
  * @param {any} property
  * @returns {*}
  */
-export const isitPropertyDefined = (object, property) => {
-  return isitObject(object) && object.hasOwnProperty(property);
-};
+export const isitPropertyDefined = (object, property) => isitObject(object) && object.hasOwnProperty(property);
 
 /**
  * Checks if the object is the window
@@ -75,9 +76,7 @@ export const isitPropertyDefined = (object, property) => {
  * @param {any} object
  * @returns {boolean}
  */
-export const isitWindowObject = (object) => {
-  return typeof object === 'object' && 'setInterval' in object;
-};
+export const isitWindowObject = (object) => typeof object === 'object' && 'setInterval' in object;
 
 /**
  * Functions we don't want to show up in any or all
@@ -90,5 +89,5 @@ export default {
   jquery: isitJquery,
   propertyCount: isitPropertyCount,
   propertyDefined: isitPropertyDefined,
-  windowObject: isitWindowObject
+  windowObject: isitWindowObject,
 };

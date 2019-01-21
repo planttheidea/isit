@@ -34,9 +34,7 @@ const checkSortedDesc = (array) => {
  * @param {any} item
  * @returns {boolean}
  */
-export const isitInArray = (object, item) => {
-  return isitArray(object) && object.indexOf(item) !== -1;
-};
+export const isitInArray = (object, item) => isitArray(object) && object.indexOf(item) !== -1;
 
 /**
  * Checks to see if the object array is already sorted
@@ -63,5 +61,5 @@ export const multiParamFunctions = ['inArray'];
 
 export default {
   inArray: isitInArray,
-  sorted: isitSorted
+  sorted: isitSorted,
 };
