@@ -1,25 +1,27 @@
-isit.js
-=====
+# isit.js
 
 [![JS.ORG](https://img.shields.io/badge/js.org-is-ffb400.svg?style=flat-square)](http://js.org)
 
-####This is a general-purpose check library.
+## This is a general-purpose check library.
+
 - No dependencies
 - AMD, Node & browser ready
 - Supports all ES5 and above environments (IE8 and below with [es5-shim](https://github.com/es-shims/es5-shim))
- 
+
 **Note**
 
 The origin of this project was the wonderful work done by arasatasaygin at [is.js](https://github.com/arasatasaygin/is.js), and should be a drop-in replacement for it (outside renaming of is to isit). I noticed there has hasn't been work on it in months, and the issues are growing, so I originally just did a fork of the work. From there I rearchitected the library to be a modular setup that is ES2015-driven and has complete test coverage. I have also made minor tweaks and bugfixes based on the backlog in is.js, but mainly I hope to grow it from here.
 
-####Install:
+## Install:
 
 Node.js:
+
 ```
 npm i isitjs --save
 ```
 
-####Usage:
+## Usage:
+
 ```
 // ES2015
 import isit from "isitjs";
@@ -40,16 +42,15 @@ import {
 var isitBoolean = require("isitjs/lib/type").isitBoolean;
 ```
 
-#### Custom build:
+## Custom build:
 
 TBD ... this feature was janky from the beginning and may no longer be needed with the modular setup. To do it right will take some time, so I'll wait to hear from the community before I invest the time to build it.
 
-Type checks
-===========
+# Type checks
 
-isit.arguments(value:any)
------------------------
-####Checks if the given value type is arguments.
+## isit.arguments(value:any)
+
+### Checks if the given value type is arguments.
 interfaces: not, all, any
 
 ```javascript
@@ -75,9 +76,9 @@ isit.all.arguments([arguments, 'foo', 'bar']);
 => false
 ```
 
-isit.array(value:any)
--------------------
-####Checks if the given value type is array.
+## isit.array(value:any)
+
+### Checks if the given value type is array.
 interfaces: not, all, any
 
 ```javascript
@@ -98,9 +99,9 @@ isit.all.array([[1, 2], 'foo', 'bar']);
 => false
 ```
 
-isit.boolean(value:any)
----------------------
-####Checks if the given value type is boolean.
+## isit.boolean(value:any)
+
+### Checks if the given value type is boolean.
 interfaces: not, all, any
 
 ```javascript
@@ -121,9 +122,9 @@ isit.all.boolean([true, 'foo', 'bar']);
 => false
 ```
 
-isit.date(value:any)
-------------------
-####Checks if the given value type is date.
+## isit.date(value:any)
+
+### Checks if the given value type is date.
 interfaces: not, all, any
 
 ```javascript
@@ -144,9 +145,9 @@ isit.all.date([new Date(), 'foo', 'bar']);
 => false
 ```
 
-isit.error(value:any)
--------------------
-####Checks if the given value type is error.
+## isit.error(value:any)
+
+### Checks if the given value type is error.
 interfaces: not, all, any
 
 ```javascript
@@ -167,9 +168,9 @@ isit.all.error([new Error(), 'foo', 'bar']);
 => false
 ```
 
-isit.function(value:any)
-----------------------
-####Checks if the given value type is function.
+## isit.function(value:any)
+
+### Checks if the given value type is function.
 interfaces: not, all, any
 
 ```javascript
@@ -190,9 +191,9 @@ isit.all.function([toString, 'foo', 'bar']);
 => false
 ```
 
-isit.nan(value:any)
------------------
-####Checks if the given value type is NaN.
+## isit.nan(value:any)
+
+### Checks if the given value type is NaN.
 interfaces: not, all, any
 
 ```javascript
@@ -213,9 +214,9 @@ isit.all.nan([NaN, 'foo', 1]);
 => false
 ```
 
-isit.null(value:any)
-------------------
-####Checks if the given value type is null.
+## isit.null(value:any)
+
+### Checks if the given value type is null.
 interfaces: not, all, any
 
 ```javascript
@@ -236,9 +237,9 @@ isit.all.null([null, 'foo', 1]);
 => false
 ```
 
-isit.number(value:any)
---------------------
-####Checks if the given value type is number.
+## isit.number(value:any)
+
+### Checks if the given value type is number.
 interfaces: not, all, any
 
 ```javascript
@@ -262,9 +263,9 @@ isit.all.number([42, 'foo', 1]);
 => false
 ```
 
-isit.object(value:any)
---------------------
-####Checks if the given value type is object.
+## isit.object(value:any)
+
+### Checks if the given value type is object.
 interfaces: not, all, any
 
 ```javascript
@@ -289,9 +290,9 @@ isit.all.object([{}, new Object()]);
 => true
 ```
 
-isit.json(value:any)
---------------------
-####Checks if the given value type is pure json object.
+## isit.json(value:any)
+
+### Checks if the given value type is pure json object.
 interfaces: not, all, any
 
 ```javascript
@@ -316,9 +317,9 @@ isit.all.json([{}, {foo: 'bar'}]);
 => true
 ```
 
-isit.regexp(value:any)
---------------------
-####Checks if the given value type is RegExp.
+## isit.regexp(value:any)
+
+### Checks if the given value type is RegExp.
 interfaces: not, all, any
 
 ```javascript
@@ -339,9 +340,9 @@ isit.all.regexp([{}, /test/]);
 => false
 ```
 
-isit.string(value:any)
---------------------
-####Checks if the given value type is string.
+## isit.string(value:any)
+
+### Checks if the given value type is string.
 interfaces: not, all, any
 
 ```javascript
@@ -362,9 +363,9 @@ isit.all.string([{}, 'foo']);
 => false
 ```
 
-isit.char(value:any)
---------------------
-####Checks if the given value type is char.
+## isit.char(value:any)
+
+### Checks if the given value type is char.
 interfaces: not, all, any
 
 ```javascript
@@ -385,9 +386,9 @@ isit.all.char(['f', 'o', 'o']);
 => true
 ```
 
-isit.undefined(value:any)
------------------------
-####Checks if the given value type is undefined.
+## isit.undefined(value:any)
+
+### Checks if the given value type is undefined.
 interfaces: not, all, any
 
 ```javascript
@@ -408,9 +409,9 @@ isit.all.undefined([{}, undefined]);
 => false
 ```
 
-isit.sameType(value:any, value:any)
----------------------------------
-####Checks if the given value types are same type.
+## isit.sameType(value:any, value:any)
+
+### Checks if the given value types are same type.
 interface: not
 
 ```javascript
@@ -424,9 +425,9 @@ isit.not.sameType(42, 7);
 => false
 ```
 
-isit.typedArray(value:any)
----------------------------------
-####Checks if the given value is a typed array.
+## isit.typedArray(value:any)
+
+### Checks if the given value is a typed array.
 interfaces: not, all, any
 
 ```javascript
@@ -450,12 +451,11 @@ isit.all.typedArray([new Float64Array(), undefined]);
 => false
 ```
 
-Presence checks
-===============
+# Presence checks
 
-isit.empty(value:object|array|string)
------------------------------------
-####Checks if the given value is empty.
+## isit.empty(value:object|array|string)
+
+### Checks if the given value is empty.
 interfaces: not, all, any
 
 ```javascript
@@ -482,9 +482,9 @@ isit.all.empty([{}, 'foo']);
 => false
 ```
 
-isit.existy(value:any)
---------------------
-####Checks if the given value is existy. (not null or undefined)
+## isit.existy(value:any)
+
+### Checks if the given value is existy. (not null or undefined)
 interfaces: not, all, any
 
 ```javascript
@@ -508,9 +508,9 @@ isit.all.existy([{}, 'foo']);
 => true
 ```
 
-isit.truthy(value:any)
---------------------
-####Checks if the given value is truthy. (existy and not false)
+## isit.truthy(value:any)
+
+### Checks if the given value is truthy. (existy and not false)
 interfaces: not, all, any
 
 ```javascript
@@ -534,9 +534,9 @@ isit.all.truthy([{}, true]);
 => true
 ```
 
-isit.falsy(value:any)
--------------------
-####Checks if the given value is falsy.
+## isit.falsy(value:any)
+
+### Checks if the given value is falsy.
 interfaces: not, all, any
 
 ```javascript
@@ -560,9 +560,9 @@ isit.all.falsy([false, true, undefined]);
 => false
 ```
 
-isit.space(value:string)
-----------------------
-####Checks if the given value is space.
+## isit.space(value:string)
+
+### Checks if the given value is space.
 interfaces: not, all, any
 
 ```javascript
@@ -586,9 +586,9 @@ isit.all.space([' ', 'foo', undefined]);
 => false
 ```
 
-isit.whitespace(value:string)
-----------------------
-####Checks if the given value is whitespace.
+## isit.whitespace(value:string)
+
+### Checks if the given value is whitespace.
 interfaces: not, all, any
 
 ```javascript
@@ -612,12 +612,11 @@ isit.all.whitespace([' ', 'foo', undefined]);
 => false
 ```
 
-RegExp checks
-=============
+# RegExp checks
 
-isit.url(value:any)
------------------
-####Checks if the given value matches url regexp.
+## isit.url(value:any)
+
+### Checks if the given value matches url regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -641,9 +640,9 @@ isit.all.url(['http://www.test.com', 'foo', undefined]);
 => false
 ```
 
-isit.email(value:any)
--------------------
-####Checks if the given value matches email regexp.
+## isit.email(value:any)
+
+### Checks if the given value matches email regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -667,9 +666,9 @@ isit.all.email(['test@test.com', 'foo', undefined]);
 => false
 ```
 
-isit.creditCard(value:any)
-------------------------
-####Checks if the given value matches credit card regexp.
+## isit.creditCard(value:any)
+
+### Checks if the given value matches credit card regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -693,9 +692,9 @@ isit.all.creditCard([378282246310005, 123, undefined]);
 => false
 ```
 
-isit.alphaNumeric(value:any)
---------------------------
-####Checks if the given value matches alpha numeric regexp.
+## isit.alphaNumeric(value:any)
+
+### Checks if the given value matches alpha numeric regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -719,9 +718,9 @@ isit.all.alphaNumeric(['alphaNu3er1k', '*?']);
 => false
 ```
 
-isit.timeString(value:any)
-------------------------
-####Checks if the given value matches time string regexp.
+## isit.timeString(value:any)
+
+### Checks if the given value matches time string regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -745,9 +744,9 @@ isit.all.timeString(['13:45:30', '90:90:90']);
 => false
 ```
 
-isit.dateString(value:any)
-------------------------
-####Checks if the given value matches date string regexp.
+## isit.dateString(value:any)
+
+### Checks if the given value matches date string regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -771,9 +770,9 @@ isit.all.dateString(['11/11/2011', '90/11/2011']);
 => false
 ```
 
-isit.usZipCode(value:any)
------------------------
-####Checks if the given value matches US zip code regexp.
+## isit.usZipCode(value:any)
+
+### Checks if the given value matches US zip code regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -797,9 +796,9 @@ isit.all.usZipCode(['02201-1020', '123']);
 => false
 ```
 
-isit.caPostalCode(value:any)
---------------------------
-####Checks if the given value matches Canada postal code regexp.
+## isit.caPostalCode(value:any)
+
+### Checks if the given value matches Canada postal code regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -826,9 +825,9 @@ isit.all.caPostalCode(['L8V3Y1', '123']);
 => false
 ```
 
-isit.ukPostCode(value:any)
-------------------------
-####Checks if the given value matches UK post code regexp.
+## isit.ukPostCode(value:any)
+
+### Checks if the given value matches UK post code regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -852,9 +851,9 @@ isit.all.ukPostCode(['B184BJ', '123']);
 => false
 ```
 
-isit.nanpPhone(value:any)
------------------------
-####Checks if the given value matches North American numbering plan phone regexp.
+## isit.nanpPhone(value:any)
+
+### Checks if the given value matches North American numbering plan phone regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -878,9 +877,9 @@ isit.all.nanpPhone(['609-555-0175', '123']);
 => false
 ```
 
-isit.eppPhone(value:any)
-----------------------
-####Checks if the given value matches extensible provisioning protocol phone regexp.
+## isit.eppPhone(value:any)
+
+### Checks if the given value matches extensible provisioning protocol phone regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -904,9 +903,9 @@ isit.all.eppPhone(['+90.2322456789', '123']);
 => false
 ```
 
-isit.socialSecurityNumber(value:any)
-----------------------------------
-####Checks if the given value matches social security number regexp.
+## isit.socialSecurityNumber(value:any)
+
+### Checks if the given value matches social security number regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -930,9 +929,9 @@ isit.all.socialSecurityNumber(['017-90-7890', '123']);
 => false
 ```
 
-isit.affirmative(value:any)
--------------------------
-####Checks if the given value matches affirmative regexp.
+## isit.affirmative(value:any)
+
+### Checks if the given value matches affirmative regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -956,9 +955,9 @@ isit.all.affirmative(['yes', 'y', 'true', 't', 'ok', 'okay']);
 => true
 ```
 
-isit.hexadecimal(value:any)
--------------------------
-####Checks if the given value matches hexadecimal regexp.
+## isit.hexadecimal(value:any)
+
+### Checks if the given value matches hexadecimal regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -982,9 +981,9 @@ isit.all.hexadecimal(['fff', '333', 'f50']);
 => true
 ```
 
-isit.hexColor(value:any)
--------------------------
-####Checks if the given value matches hexcolor regexp.
+## isit.hexColor(value:any)
+
+### Checks if the given value matches hexcolor regexp.
 interfaces: not, all, any
 
 ```javascript
@@ -1008,9 +1007,9 @@ isit.all.hexColor(['fff', '333', 'f50']);
 => true
 ```
 
-isit.ip(value:string)
--------------------------
-####Checks if the given value matches ip regexp
+## isit.ip(value:string)
+
+### Checks if the given value matches ip regexp
 interfaces: not, all, any
 
 ```javascript
@@ -1034,9 +1033,9 @@ isit.all.ip(['123.123.23.12', 'A:B:C:D:E:F:0:0']);
 => true
 ```
 
-isit.ipv4(value:string)
--------------------------
-####Checks if the given value matches ipv4 regexp
+## isit.ipv4(value:string)
+
+### Checks if the given value matches ipv4 regexp
 interfaces: not, all, any
 
 ```javascript
@@ -1061,9 +1060,9 @@ isit.all.ipv4(['198.12.3.142', '1.2.3']);
 
 ```
 
-isit.ipv6(value:string)
--------------------------
-####Checks if the given value matches ipv6 regexp
+## isit.ipv6(value:string)
+
+### Checks if the given value matches ipv6 regexp
 interfaces: not, all, any
 
 ```javascript
@@ -1087,9 +1086,9 @@ isit.all.ipv6(['2001:DB8:0:0:1::1', '1.2.3']);
 => false
 ```
 
-isit.isoDateString(value:any)
-------------------------
-####Checks if the given value matches valid ISO strings (full ISO compliance).
+## isit.isoDateString(value:any)
+
+### Checks if the given value matches valid ISO strings (full ISO compliance).
 interfaces: not, all, any
 
 ```javascript
@@ -1113,12 +1112,12 @@ isit.all.isoDateString(['2010-222', '2010-W21-2']);
 => true
 ```
 
-String checks
-=============
+# String checks
 
-isit.include(value:string, value:substring)
------------------------------------------
-#### Checks if the given string contains a substring.
+## isit.include(value:string, value:substring)
+
+## Checks if the given string contains a substring.
+
 interfaces: not
 
 ```javascript
@@ -1132,13 +1131,13 @@ isit.not.include('test', 'text');
 => true
 ```
 
-isit.includes(value:string, value:substring)
------------------------------------------
-#### alias for isit.include
+## isit.includes(value:string, value:substring)
 
-isit.upperCase(value:string)
---------------------------
-####Checks if the given string is UPPERCASE.
+## alias for isit.include
+
+## isit.upperCase(value:string)
+
+### Checks if the given string is UPPERCASE.
 interfaces: not, all, any
 
 ```javascript
@@ -1162,10 +1161,9 @@ isit.all.upperCase(['YEAP', 'ALL UPPERCASE']);
 => true
 ```
 
+## isit.lowerCase(value:string)
 
-isit.lowerCase(value:string)
---------------------------
-####Checks if the given string is lowercase.
+### Checks if the given string is lowercase.
 interfaces: not, all, any
 
 ```javascript
@@ -1189,9 +1187,9 @@ isit.all.lowerCase(['yeap', 'all lowercase']);
 => true
 ```
 
-isit.startWith(value:string, value:substring)
--------------------------------------------
-####Checks if the given string starts with substring.
+## isit.startWith(value:string, value:substring)
+
+### Checks if the given string starts with substring.
 interface: not
 
 ```javascript
@@ -1205,13 +1203,13 @@ isit.not.startWith('nope not that', 'not');
 => true
 ```
 
-isit.startsWith(value:string, value:substring)
--------------------------------------------
-#### alias for isit.startWith
+## isit.startsWith(value:string, value:substring)
 
-isit.endWith(value:string, value:substring)
------------------------------------------
-####Checks if the given string ends with substring.
+## alias for isit.startWith
+
+## isit.endWith(value:string, value:substring)
+
+### Checks if the given string ends with substring.
 interfaces: not
 
 ```javascript
@@ -1228,13 +1226,13 @@ isit.endWith('yeap that one', 'one');
 => true
 ```
 
-isit.endsWith(value:string, value:substring)
------------------------------------------
-#### alias for isit.endWith
+## isit.endsWith(value:string, value:substring)
 
-isit.capitalized(value:string)
----------------------------------------------
-####Checks if the given string is capitalized.
+## alias for isit.endWith
+
+## isit.capitalized(value:string)
+
+### Checks if the given string is capitalized.
 interfaces: not, all, any
 
 ```javascript
@@ -1258,9 +1256,9 @@ isit.all.capitalized(['Nope', 'not']);
 => false
 ```
 
-isit.palindrome(value:string, value:substring)
----------------------------------------------
-####Checks if the given string is palindrome.
+## isit.palindrome(value:string, value:substring)
+
+### Checks if the given string is palindrome.
 interfaces: not, all, any
 
 ```javascript
@@ -1284,9 +1282,9 @@ isit.all.palindrome(['Nope', 'testset']);
 => false
 ```
 
-isit.camelCase(value:string)
----------------------------------------------
-####Checks if the given string is camelCase.
+## isit.camelCase(value:string)
+
+### Checks if the given string is camelCase.
 interfaces: not, all, any
 
 ```javascript
@@ -1310,9 +1308,9 @@ isit.all.camelCase(['Nope', 'fooBar']);
 => false
 ```
 
-isit.kebabCase(value:string)
----------------------------------------------
-####Checks if the given string is -kebab-case.
+## isit.kebabCase(value:string)
+
+### Checks if the given string is -kebab-case.
 interfaces: not, all, any
 
 ```javascript
@@ -1336,9 +1334,9 @@ isit.all.kebabCase(['Nope', '-foo-bar']);
 => false
 ```
 
-isit.snakeCase(value:string)
----------------------------------------------
-####Checks if the given string is snake_case.
+## isit.snakeCase(value:string)
+
+### Checks if the given string is snake_case.
 interfaces: not, all, any
 
 ```javascript
@@ -1362,9 +1360,9 @@ isit.all.snakeCase(['Nope', 'foo_bar']);
 => false
 ```
 
-isit.startCase(value:string)
----------------------------------------------
-####Checks if the given string is Start Case.
+## isit.startCase(value:string)
+
+### Checks if the given string is Start Case.
 interfaces: not, all, any
 
 ```javascript
@@ -1388,9 +1386,9 @@ isit.all.startCase(['Nope', '-foo-bar']);
 => false
 ```
 
-isit.doubleByte(value:string)
----------------------------------------------
-####Checks if the given string contains two-byte (or non-Latin) characters.
+## isit.doubleByte(value:string)
+
+### Checks if the given string contains two-byte (or non-Latin) characters.
 interfaces: not, all, any
 
 ```javascript
@@ -1414,9 +1412,9 @@ isit.all.doubleByte(['Nope', 'は123']);
 => false
 ```
 
-isit.html(value:string)
----------------------------------------------
-####Checks if the given string contains HTML tags.
+## isit.html(value:string)
+
+### Checks if the given string contains HTML tags.
 interfaces: not, all, any
 
 ```javascript
@@ -1440,9 +1438,9 @@ isit.all.html(['Nope', '<div/>']);
 => false
 ```
 
-isit.dataUrl(value:string)
----------------------------------------------
-####Checks if the given string is a data URL.
+## isit.dataUrl(value:string)
+
+### Checks if the given string is a data URL.
 interfaces: not, all, any
 
 ```javascript
@@ -1466,12 +1464,11 @@ isit.all.dataUrl(['Nope', 'data:text/html;charset=US-ASCII,%3Ch1%3EHello!%3C%2Fh
 => false
 ```
 
-Arithmetic checks
-=================
+# Arithmetic checks
 
-isit.equal(value:any, value:any)
-------------------------------
-####Checks if the given values are equal. For objects and arrays, deep equality checks occur.
+## isit.equal(value:any, value:any)
+
+### Checks if the given values are equal. For objects and arrays, deep equality checks occur.
 interfaces: not
 
 ```javascript
@@ -1497,9 +1494,9 @@ isit.not.equal(["foo", "bar"], ["bar", "foo"]); // for arrays, order matters for
 => true
 ```
 
-isit.even(value:number)
----------------------
-####Checks if the given value is even.
+## isit.even(value:number)
+
+### Checks if the given value is even.
 interfaces: not, all, any
 
 ```javascript
@@ -1520,9 +1517,9 @@ isit.all.even([40, 42, 43]);
 => false
 ```
 
-isit.odd(value:number)
---------------------
-####Checks if the given value is odd.
+## isit.odd(value:number)
+
+### Checks if the given value is odd.
 interfaces: not, all, any
 
 ```javascript
@@ -1543,9 +1540,9 @@ isit.all.odd([40, 42, 43]);
 => false
 ```
 
-isit.positive(value:number)
--------------------------
-####Checks if the given value is positive.
+## isit.positive(value:number)
+
+### Checks if the given value is positive.
 interfaces: not, all, any
 
 ```javascript
@@ -1566,9 +1563,9 @@ isit.all.positive([40, 42, -43]);
 => false
 ```
 
-isit.negative(value:number)
--------------------------
-####Checks if the given value is negative.
+## isit.negative(value:number)
+
+### Checks if the given value is negative.
 interfaces: not, all, any
 
 ```javascript
@@ -1589,9 +1586,9 @@ isit.all.negative([40, 42, -43]);
 => false
 ```
 
-isit.above(value:number, min)
----------------------------
-####Checks if the given value is above minimum value.
+## isit.above(value:number, min)
+
+### Checks if the given value is above minimum value.
 interface: not
 
 ```javascript
@@ -1602,13 +1599,13 @@ isit.not.above(42, 50);
 => true
 ```
 
-isit.over(value:number, min)
----------------------------
-#### alias for isit.above
+## isit.over(value:number, min)
 
-isit.under(value:number, min)
----------------------------
-####Checks if the given value is under maximum value.
+## alias for isit.above
+
+## isit.under(value:number, min)
+
+### Checks if the given value is under maximum value.
 interface: not
 
 ```javascript
@@ -1619,13 +1616,13 @@ isit.not.under(42, 30);
 => true
 ```
 
-isit.below(value:number, min)
----------------------------
-#### alias for isit.under
+## isit.below(value:number, min)
 
-isit.within(value:number, min, max)
----------------------------------
-####Checks if the given value is within minimum and maximum values.
+## alias for isit.under
+
+## isit.within(value:number, min, max)
+
+### Checks if the given value is within minimum and maximum values.
 interface: not
 
 ```javascript
@@ -1636,9 +1633,9 @@ isit.not.within(40, 30, 35);
 => true
 ```
 
-isit.decimal(value:number)
-------------------------
-####Checks if the given value is decimal.
+## isit.decimal(value:number)
+
+### Checks if the given value is decimal.
 interfaces: not, all, any
 
 ```javascript
@@ -1659,9 +1656,9 @@ isit.all.decimal([40, 42.5, -43]);
 => false
 ```
 
-isit.integer(value:number)
-------------------------
-####Checks if the given value is integer.
+## isit.integer(value:number)
+
+### Checks if the given value is integer.
 interfaces: not, all, any
 
 ```javascript
@@ -1682,9 +1679,9 @@ isit.all.integer([40, 42.5, -43]);
 => false
 ```
 
-isit.finite(value:number)
------------------------
-####Checks if the given value is finite.
+## isit.finite(value:number)
+
+### Checks if the given value is finite.
 interfaces: not, all, any
 
 ```javascript
@@ -1705,9 +1702,9 @@ isit.all.finite([Infinity, -Infinity, 42.5]);
 => false
 ```
 
-isit.infinite(value:number)
--------------------------
-####Checks if the given value is infinite.
+## isit.infinite(value:number)
+
+### Checks if the given value is infinite.
 interfaces: not, all, any
 
 ```javascript
@@ -1728,12 +1725,11 @@ isit.all.infinite([Infinity, -Infinity, 42.5]);
 => false
 ```
 
-Object checks
-=============
+# Object checks
 
-isit.propertyCount(value:object, count)
--------------------------------------
-####Checks if objects' property count is equal to given count.
+## isit.propertyCount(value:object, count)
+
+### Checks if objects' property count is equal to given count.
 interface: not
 
 ```javascript
@@ -1747,9 +1743,9 @@ isit.not.propertyCount({}, 2);
 => true
 ```
 
-isit.propertyDefined(value:object, property)
-------------------------------------------
-####Checks if the given property is defined on object.
+## isit.propertyDefined(value:object, property)
+
+### Checks if the given property is defined on object.
 interface: not
 
 ```javascript
@@ -1763,9 +1759,9 @@ isit.not.propertyDefined({}, 'nope');
 => true
 ```
 
-isit.windowObject(value:window)
------------------------------
-####Checks if the given object is window object.
+## isit.windowObject(value:window)
+
+### Checks if the given object is window object.
 interfaces: not, all, any
 
 ```javascript
@@ -1789,9 +1785,9 @@ isit.all.windowObject([window, {nope: 'nope'}]);
 => false
 ```
 
-isit.domNode(value:object)
------------------------------
-####Checks if the given object is a dom node.
+## isit.domNode(value:object)
+
+### Checks if the given object is a dom node.
 interfaces: not, all, any
 
 ```javascript
@@ -1816,9 +1812,9 @@ isit.all.domNode([obj, {nope: 'nope'}]);
 => false
 ```
 
-isit.jquery(value:object)
------------------------------
-####Checks if the given object is a jQuery object or jQuery itself.
+## isit.jquery(value:object)
+
+### Checks if the given object is a jQuery object or jQuery itself.
 interfaces: not, all, any
 
 ```javascript
@@ -1842,9 +1838,9 @@ isit.all.jquery([$, {nope: 'nope'}]);
 => false
 ```
 
-isit.domNodeList(value:object)
------------------------------
-####Checks if the given object is a dom NodeList.
+## isit.domNodeList(value:object)
+
+### Checks if the given object is a dom NodeList.
 interfaces: not, all, any
 
 ```javascript
@@ -1869,9 +1865,9 @@ isit.all.domNodeList([obj, {nope: 'nope'}]);
 => false
 ```
 
-isit.plainObject(value:object)
------------------------------
-####Checks if the given object is a plain JavaScript object.
+## isit.plainObject(value:object)
+
+### Checks if the given object is a plain JavaScript object.
 interfaces: not, all, any
 
 ```javascript
@@ -1895,13 +1891,13 @@ isit.all.plainObject([{some:"object"}, document.querySelector('#dom-node')]);
 => false
 ```
 
-Array checks
-============
+# Array checks
 
-isit.inArray(value:any, array)
----------------------
-####Checks if the given item is in array?
+## isit.inArray(value:any, array)
+
+### Checks if the given item is in array?
 interface: not
+
 ```javascript
 isit.inArray(2, [1, 2, 3]);
 => true
@@ -1913,9 +1909,10 @@ isit.not.inArray(4, [1, 2, 3]);
 => true
 ```
 
-isit.sorted(value:array)
-----------------------
-#### Checks if the given array is sorted.
+## isit.sorted(value:array)
+
+## Checks if the given array is sorted.
+
 interfaces: not, all, any
 
 ```javascript
@@ -1939,13 +1936,13 @@ isit.all.sorted([[1, 2], [5, 4, 7]]);
 => false
 ```
 
-Environment checks
-==================
-####Environment checks are not available as node module.
+# Environment checks
 
-isit.browser()
--------------------
-####Checks if current environment is browser.
+##Environment checks are not available as node module.
+
+## isit.browser()
+
+### Checks if current environment is browser.
 interface: not
 
 ```javascript
@@ -1953,9 +1950,9 @@ isit.browser()
 => true if in browser
 ```
 
-isit.node()
--------------------
-####Checks if current environment is nodejs.
+## isit.node()
+
+### Checks if current environment is nodejs.
 interface: not
 
 ```javascript
@@ -1963,9 +1960,9 @@ isit.node()
 => true if in nodejs
 ```
 
-isit.ie(value:number)
--------------------
-####Checks if current browser is ie. Parameter is optional version number of browser.
+## isit.ie(value:number)
+
+### Checks if current browser is ie. Parameter is optional version number of browser.
 interface: not
 
 ```javascript
@@ -1979,9 +1976,9 @@ isit.not.ie();
 => false if current browser is ie
 ```
 
-isit.chrome()
------------
-####Checks if current browser is chrome.
+## isit.chrome()
+
+### Checks if current browser is chrome.
 interface: not
 
 ```javascript
@@ -1992,9 +1989,9 @@ isit.not.chrome();
 => false if current browser is chrome
 ```
 
-isit.firefox()
-------------
-####Checks if current browser is firefox.
+## isit.firefox()
+
+### Checks if current browser is firefox.
 interface: not
 
 ```javascript
@@ -2005,9 +2002,9 @@ isit.not.firefox();
 => false if current browser is firefox
 ```
 
-isit.opera()
-----------
-####Checks if current browser is opera.
+## isit.opera()
+
+### Checks if current browser is opera.
 interface: not
 
 ```javascript
@@ -2018,9 +2015,9 @@ isit.not.opera();
 => false if current browser is opera
 ```
 
-isit.safari()
------------
-####Checks if current browser is safari.
+## isit.safari()
+
+### Checks if current browser is safari.
 interface: not
 
 ```javascript
@@ -2031,9 +2028,9 @@ isit.not.safari();
 => false if current browser is safari
 ```
 
-isit.ios()
---------
-####Checks if current device has ios.
+## isit.ios()
+
+### Checks if current device has ios.
 interface: not
 
 ```javascript
@@ -2044,9 +2041,9 @@ isit.not.ios();
 => true if current device is not iPhone, iPad or iPod
 ```
 
-isit.iphone()
------------
-####Checks if current device is iPhone.
+## isit.iphone()
+
+### Checks if current device is iPhone.
 interface: not
 
 ```javascript
@@ -2057,9 +2054,9 @@ isit.not.iphone();
 => true if current device is not iPhone
 ```
 
-isit.ipad()
----------
-####Checks if current device is iPad.
+## isit.ipad()
+
+### Checks if current device is iPad.
 interface: not
 
 ```javascript
@@ -2070,9 +2067,9 @@ isit.not.ipad();
 => true if current device is not iPad
 ```
 
-isit.ipod()
----------
-####Checks if current device is iPod.
+## isit.ipod()
+
+### Checks if current device is iPod.
 interface: not
 
 ```javascript
@@ -2083,9 +2080,9 @@ isit.not.ipod();
 => true if current device is not iPod
 ```
 
-isit.android()
-------------
-####Checks if current device has Android.
+## isit.android()
+
+### Checks if current device has Android.
 interface: not
 
 ```javascript
@@ -2096,9 +2093,9 @@ isit.not.android();
 => true if current device has not Android OS
 ```
 
-isit.androidPhone()
------------------
-####Checks if current device is Android phone.
+## isit.androidPhone()
+
+### Checks if current device is Android phone.
 interface: not
 
 ```javascript
@@ -2109,9 +2106,9 @@ isit.not.androidPhone();
 => true if current device is not Android phone
 ```
 
-isit.androidTablet()
-------------------
-####Checks if current device is Android tablet.
+## isit.androidTablet()
+
+### Checks if current device is Android tablet.
 interface: not
 
 ```javascript
@@ -2122,9 +2119,9 @@ isit.not.androidTablet();
 => true if current device is not Android tablet
 ```
 
-isit.blackberry()
----------------
-####Checks if current device is Blackberry.
+## isit.blackberry()
+
+### Checks if current device is Blackberry.
 interface: not
 
 ```javascript
@@ -2135,9 +2132,9 @@ isit.not.blackberry();
 => true if current device is not Blackberry
 ```
 
-isit.windowsPhone()
------------------
-####Checks if current device is Windows phone.
+## isit.windowsPhone()
+
+### Checks if current device is Windows phone.
 interface: not
 
 ```javascript
@@ -2148,9 +2145,9 @@ isit.not.windowsPhone();
 => true if current device is not Windows Phone
 ```
 
-isit.windowsTablet()
-------------------
-####Checks if current device is Windows tablet.
+## isit.windowsTablet()
+
+### Checks if current device is Windows tablet.
 interface: not
 
 ```javascript
@@ -2161,9 +2158,9 @@ isit.not.windowsTablet();
 => true if current device is not Windows tablet
 ```
 
-isit.windows()
-------------
-####Checks if current OS is Windows.
+## isit.windows()
+
+### Checks if current OS is Windows.
 interface: not
 
 ```javascript
@@ -2174,9 +2171,9 @@ isit.not.windows();
 => true if current OS is not Windows
 ```
 
-isit.mac()
---------
-####Checks if current OS is Mac OS X.
+## isit.mac()
+
+### Checks if current OS is Mac OS X.
 interface: not
 
 ```javascript
@@ -2187,9 +2184,9 @@ isit.not.mac();
 => true if current OS is not Mac OS X
 ```
 
-isit.linux()
-----------
-####Checks if current OS is linux.
+## isit.linux()
+
+### Checks if current OS is linux.
 interface: not
 
 ```javascript
@@ -2200,9 +2197,9 @@ isit.not.linux();
 => true if current OS is not linux
 ```
 
-isit.desktop()
-------------
-####Checks if current device is desktop.
+## isit.desktop()
+
+### Checks if current device is desktop.
 interface: not
 
 ```javascript
@@ -2213,11 +2210,12 @@ isit.not.desktop();
 => true if current device is not desktop
 ```
 
-isit.mobile()
------------
-####Checks if current device is mobile.
+## isit.mobile()
+
+### Checks if current device is mobile.
 interface: not
 iPhone, iPod, Android Phone, Windows Phone, Blackberry.
+
 ```javascript
 
 isit.mobile();
@@ -2227,11 +2225,12 @@ isit.not.mobile();
 => true if current device is not mobile
 ```
 
-isit.tablet()
------------
-####Checks if current device is tablet.
+## isit.tablet()
+
+### Checks if current device is tablet.
 interface: not
 iPad, Android Tablet, Windows Tablet
+
 ```javascript
 
 isit.tablet();
@@ -2241,9 +2240,9 @@ isit.not.tablet();
 => true if current device is not tablet
 ```
 
-isit.online()
------------
-####Checks if current device is online.
+## isit.online()
+
+### Checks if current device is online.
 interface: not
 
 ```javascript
@@ -2254,9 +2253,9 @@ isit.not.online();
 => true if current device is not online
 ```
 
-isit.offline()
-------------
-####Checks if current device is offline.
+## isit.offline()
+
+### Checks if current device is offline.
 interface: not
 
 ```javascript
@@ -2267,9 +2266,9 @@ isit.not.offline();
 => true if current device is not offline
 ```
 
-isit.touchDevice()
-------------
-####Checks if current device supports touch.
+## isit.touchDevice()
+
+### Checks if current device supports touch.
 interface: not
 
 ```javascript
@@ -2280,9 +2279,9 @@ isit.not.touchDevice();
 => true if current device does not support touch
 ```
 
-isit.blink()
-------------
-####Checks if browser rendering engine is Blink.
+## isit.blink()
+
+### Checks if browser rendering engine is Blink.
 interface: not
 
 ```javascript
@@ -2293,9 +2292,9 @@ isit.not.blink();
 => true if browser does not render with Blink
 ```
 
-isit.gecko()
-------------
-####Checks if browser rendering engine is Gecko.
+## isit.gecko()
+
+### Checks if browser rendering engine is Gecko.
 interface: not
 
 ```javascript
@@ -2306,9 +2305,9 @@ isit.not.gecko();
 => true if browser does not render with Gecko
 ```
 
-isit.presto()
-------------
-####Checks if browser rendering engine is Presto.
+## isit.presto()
+
+### Checks if browser rendering engine is Presto.
 interface: not
 
 ```javascript
@@ -2319,9 +2318,9 @@ isit.not.presto();
 => true if browser does not render with Presto
 ```
 
-isit.trident()
-------------
-####Checks if browser rendering engine is Trident.
+## isit.trident()
+
+### Checks if browser rendering engine is Trident.
 interface: not
 
 ```javascript
@@ -2332,9 +2331,9 @@ isit.not.trident();
 => true if browser does not render with Trident
 ```
 
-isit.webkit()
-------------
-####Checks if browser rendering engine is WebKit.
+## isit.webkit()
+
+### Checks if browser rendering engine is WebKit.
 interface: not
 
 ```javascript
@@ -2345,12 +2344,11 @@ isit.not.webkit();
 => true if browser does not render with WebKit
 ```
 
-Time checks
-===========
+# Time checks
 
-isit.today(value:object)
-----------------------
-####Checks if the given date object indicate today.
+## isit.today(value:object)
+
+### Checks if the given date object indicate today.
 interfaces: not, all, any
 
 ```javascript
@@ -2376,9 +2374,9 @@ isit.all.today([today, yesterday]);
 => false
 ```
 
-isit.yesterday(value:object)
---------------------------
-####Checks if the given date object indicate yesterday.
+## isit.yesterday(value:object)
+
+### Checks if the given date object indicate yesterday.
 interfaces: not, all, any
 
 ```javascript
@@ -2404,9 +2402,9 @@ isit.all.yesterday([today, yesterday]);
 => false
 ```
 
-isit.tomorrow(value:object)
--------------------------
-####Checks if the given date object indicate tomorrow.
+## isit.tomorrow(value:object)
+
+### Checks if the given date object indicate tomorrow.
 interfaces: not, all, any
 
 ```javascript
@@ -2432,9 +2430,9 @@ isit.all.tomorrow([today, tomorrow]);
 => false
 ```
 
-isit.past(value:object)
----------------------
-####Checks if the given date object indicate past.
+## isit.past(value:object)
+
+### Checks if the given date object indicate past.
 interfaces: not, all, any
 
 ```javascript
@@ -2461,9 +2459,9 @@ isit.all.past([yesterday, tomorrow]);
 => false
 ```
 
-isit.future(value:object)
------------------------
-####Checks if the given date object indicate future.
+## isit.future(value:object)
+
+### Checks if the given date object indicate future.
 interfaces: not, all, any
 
 ```javascript
@@ -2490,9 +2488,9 @@ isit.all.future([yesterday, tomorrow]);
 => false
 ```
 
-isit.day(value:object, dayString)
--------------------------------
-####Checks if the given date objects' day equal given dayString parameter. If not given, dayString defaults to current day.
+## isit.day(value:object, dayString)
+
+### Checks if the given date objects' day equal given dayString parameter. If not given, dayString defaults to current day.
 interface: not
 
 ```javascript
@@ -2508,9 +2506,9 @@ isit.not.day(mondayObj, 'tuesday');
 => true
 ```
 
-isit.month(value:object, monthString)
------------------------------------
-####Checks if the given date objects' month equal given monthString parameter. If not given, monthString defaults to current month.
+## isit.month(value:object, monthString)
+
+### Checks if the given date objects' month equal given monthString parameter. If not given, monthString defaults to current month.
 interface: not
 
 ```javascript
@@ -2526,9 +2524,9 @@ isit.not.month(februaryObj, 'january');
 => true
 ```
 
-isit.year(value:object, yearNumber)
----------------------------------
-####Checks if the given date objects' year equal given yearNumber parameter. If not given, yearNumber defaults to current year.
+## isit.year(value:object, yearNumber)
+
+### Checks if the given date objects' year equal given yearNumber parameter. If not given, yearNumber defaults to current year.
 interface: not
 
 ```javascript
@@ -2544,9 +2542,9 @@ isit.not.year(year2016, 2015);
 => true
 ```
 
-isit.leapYear(value:number)
----------------------------------
-####Checks if the given year number is a leap year
+## isit.leapYear(value:number)
+
+### Checks if the given year number is a leap year
 interfaces: not, all, any
 
 ```javascript
@@ -2570,9 +2568,9 @@ isit.all.leapYear([2016, 2080]);
 => true
 ```
 
-isit.weekend(value:object)
-------------------------
-####Checks if the given date objects' day is weekend.
+## isit.weekend(value:object)
+
+### Checks if the given date objects' day is weekend.
 interfaces: not, all, any
 
 ```javascript
@@ -2599,9 +2597,9 @@ isit.all.weekend([sunday, saturday, monday]);
 => false
 ```
 
-isit.weekday(value:object)
-------------------------
-####Checks if the given date objects' day is weekday.
+## isit.weekday(value:object)
+
+### Checks if the given date objects' day is weekday.
 interfaces: not, all, any
 
 ```javascript
@@ -2628,9 +2626,9 @@ isit.all.weekday([sunday, saturday, monday]);
 => false
 ```
 
-isit.inDateRange(value:object, startObject, endObject)
-----------------------------------------------------
-####Checks if date is within given range.
+## isit.inDateRange(value:object, startObject, endObject)
+
+### Checks if date is within given range.
 interface: not
 
 ```javascript
@@ -2647,9 +2645,9 @@ isit.not.inDateRange(saturday, sunday, monday);
 => true
 ```
 
-isit.inLastWeek(value:object)
----------------------------
-####Checks if the given date is between now and 7 days ago.
+## isit.inLastWeek(value:object)
+
+### Checks if the given date is between now and 7 days ago.
 interface: not
 
 ```javascript
@@ -2665,9 +2663,9 @@ isit.not.inLastWeek(nineDaysAgo);
 => true
 ```
 
-isit.inLastMonth(value:object)
-----------------------------
-####Checks if the given date is between now and a month ago.
+## isit.inLastMonth(value:object)
+
+### Checks if the given date is between now and a month ago.
 interface: not
 
 ```javascript
@@ -2683,9 +2681,9 @@ isit.not.inLastMonth(fortyDaysAgo);
 => true
 ```
 
-isit.inLastYear(value:object)
----------------------------
-####Checks if the given date is between now and a year ago.
+## isit.inLastYear(value:object)
+
+### Checks if the given date is between now and a year ago.
 interface: not
 
 ```javascript
@@ -2701,9 +2699,9 @@ isit.not.inLastYear(thirteenMonthsAgo);
 => true
 ```
 
-isit.inNextWeek(value:object)
----------------------------
-####Checks if the given date is between now and 7 days later.
+## isit.inNextWeek(value:object)
+
+### Checks if the given date is between now and 7 days later.
 interface: not
 
 ```javascript
@@ -2719,9 +2717,9 @@ isit.not.inNextWeek(nineDaysLater);
 => true
 ```
 
-isit.inNextMonth(value:object)
-----------------------------
-####Checks if the given date is between now and a month later.
+## isit.inNextMonth(value:object)
+
+### Checks if the given date is between now and a month later.
 interface: not
 
 ```javascript
@@ -2737,9 +2735,9 @@ isit.not.inNextMonth(fortyDaysLater);
 => true
 ```
 
-isit.inNextYear(value:object)
----------------------------
-####Checks if the given date is between now and a year later.
+## isit.inNextYear(value:object)
+
+### Checks if the given date is between now and a year later.
 interface: not
 
 ```javascript
@@ -2755,9 +2753,9 @@ isit.not.inNextYear(thirteenMonthsLater);
 => true
 ```
 
-isit.quarterOfYear(value:object, quarterNumber)
----------------------------------------------
-####Checks if the given date is in the parameter quarter.
+## isit.quarterOfYear(value:object, quarterNumber)
+
+### Checks if the given date is in the parameter quarter.
 interface: not
 
 ```javascript
@@ -2773,9 +2771,9 @@ isit.not.quarterOfYear(secondQuarter, 1);
 => true
 ```
 
-isit.daylightSavingTime(value:object, quarterNumber)
---------------------------------------------------
-####Checks if the given date is in daylight saving time.
+## isit.daylightSavingTime(value:object, quarterNumber)
+
+### Checks if the given date is in daylight saving time.
 interface: not
 
 ```javascript
@@ -2793,15 +2791,14 @@ isit.not.daylightSavingTime(january1);
 => true
 ```
 
-isit.daylightSavingsTime(value:object, quarterNumber)
--------------------------------------------------
-#### alias for isit.daylightSavingTime
+## isit.daylightSavingsTime(value:object, quarterNumber)
 
-Configuration methods
-=====================
+## alias for isit.daylightSavingTime
 
-isit.setRegexp(value:RegExp, regexpString)
-----------------------------------------
+# Configuration methods
+
+## isit.setRegexp(value:RegExp, regexpString)
+
 Override RegExps if you think they suck.
 
 ```javascript
@@ -2811,4 +2808,4 @@ isit.url('https://www.duckduckgo.com');
 isit.setRegexp(/quack/, 'url');
 isit.url('quack');
 => true
-```=
+```
